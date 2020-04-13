@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5e71ae7e-6ac9-46ec-97a7-30c177508346" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1aVRbMo8CEHX3EMdlslpNhzNbPT" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Documents\Bitwarden\data\nginx" />
+      <recent name="D:\Documents\Bitwarden\data" />
+      <recent name="D:\Documents\Bitwarden" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5e71ae7e-6ac9-46ec-97a7-30c177508346" name="Default Changelist" comment="" />
+      <created>1586818844891</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1586818844891</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1029" y="503" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1586819416153">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1029" y="503" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1400/2560.-484.1200.1880@0.0.2560.1400" timestamp="1586819416153" />
+  </component>
+</project>

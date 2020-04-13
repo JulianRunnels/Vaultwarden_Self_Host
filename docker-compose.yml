@@ -1,0 +1,16 @@
+version: '3'
+services:
+  bitwarden:
+    image: bitwardenrs/server:latest
+    expose:
+      - "80"
+    volumes:
+      - ./bwdata/:/data/
+  nginx:
+    image: nginx:1.15-alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./data/nginx:/etc/nginx
+      - ./data/ssl:/etc/ssl
