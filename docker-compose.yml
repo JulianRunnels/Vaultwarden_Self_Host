@@ -19,7 +19,7 @@ services:
       - ./data/ssl:/etc/ssl
 
   bw_backup:
-    image: bruceforce/bw_backup
+    image: bruceforce/bw_backup:latest
     container_name: bw_backup
     restart: on-failure
     depends_on:
