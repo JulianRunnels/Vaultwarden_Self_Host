@@ -19,7 +19,7 @@ From here here are three different installation paths, depending on your existin
 * Docker/docker-compose installed, want to create a full private CA and client certificate:
   * `./create_ssl.sh` - This will just create the needed SSL certificates
 * Don't want to install docker or create certs, just spin up containers:
-  * `docker-compose up -d` - This will just spin up the containers, you will need to supply your own cert in ./data/ssl
+  * `sudo docker-compose up -d` - This will just spin up the containers, you will need to supply your own cert in ./data/ssl
   
 Once you have all the setup done, you will need to download the personal CA created, which should be called __myCA.crt__ and install it as a trusted root in each client you want to connect to the bitwarden instance. The good news is that once you install this CA, any further personal certs you make with the CA will be automatically trusted and validated, without having to load new certs in.
 
