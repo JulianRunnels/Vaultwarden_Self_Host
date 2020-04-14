@@ -10,7 +10,7 @@ __PLEASE NOTE THAT THIS SETUP USES [BITWARDEN_RS](https://github.com/dani-garcia
 __Note: to install on a Raspberry Pi, you will need up update the tags for the containers in docker-compose.yml with the values in the comments of that page__
 
 1. `git clone https://github.com/JulianRunnels/Bitwarden_Self_Host.git`
-2. `cd Bitbucket_Self_host`
+2. `cd Bitwarden_Self_host`
 3. `chmod +x ./setup.sh`
 
 From here here are three different installation paths, depending on your existing setup and needs
