@@ -4,7 +4,7 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
-apt install docker
+apt install -y docker
 usermod -aG docker $USER
 apt install -y libffi-dev libssl-dev
 apt install -y python3 python3-pip
@@ -23,7 +23,7 @@ echo "Docker and Docker-Compose have been installed, it is recommended to restar
 echo "Would you like to restart?"
 select yn in "Yes" "No"; do
     case $yn in
-        Yes ) sudo reboot;;
+        Yes ) sudo reboot && break;;
         No ) exit;;
     esac
 done
