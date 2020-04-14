@@ -27,7 +27,7 @@ To download, I recommend just using scp or any other file transfer:
 `scp myCA.crt user@external:~`
 
 #### Note for iOS installation ####
-After you transfer the cert over to iOS and have it work with native Bitwarden app, you will need to additionally _enable full trust_.
+After you transfer the cert over to iOS, to have it work with native Bitwarden app, you will need to  _enable full trust_.
 To do this:
 * Make sure the certificate is installed
 * Go to _Settings_ -> _General_ -> _About_ -> _Certificate Trust Settings_ or just search for _Trusted Certificates_  
