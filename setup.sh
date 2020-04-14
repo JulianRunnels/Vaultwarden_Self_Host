@@ -14,11 +14,11 @@ clear
 echo "Would you like to create your own personal CA and SSL certificate to enable HTTPS with bitwarden?"
 select yn in "Yes" "No"; do
     case $yn in
-	Yes ) ./create_ssl.sh;;
+	Yes ) ./create_ssl.sh && break;;
 	No ) echo "Make sure to load your own SSL certs into ./data/ssl for the Nginx container to use" && break;;
     esac
 done
-
+echo ""
 echo "Docker and Docker-Compose have been installed, it is recommended to restart to make sure everything is installed correctly"
 echo "Would you like to restart?"
 select yn in "Yes" "No"; do
