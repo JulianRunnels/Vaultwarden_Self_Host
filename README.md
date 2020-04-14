@@ -1,5 +1,4 @@
-# Bitwarden_Self_Host
-Automatically setup and host a Bitwarden instance on Linux or Raspberry Pi
+# Bitwarden Self Host
 
 For more details please read: 
 
