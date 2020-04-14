@@ -16,5 +16,6 @@ echo -n "Please enter your FQDN: "
 read answer
 sed -i "s/bitwarden.local/$answer/g" bitwarden.ext
 openssl x509 -req -in bitwarden.csr -CA myCA.crt -CAkey myCA.key -CAcreateserial -out bitwarden.crt -days 365 -sha256 -extfile bitwarden.ext
-cp bitwarden.crt ./data/ssl
-cp bitwarden.key ./data/ssl
+mkdir ./data/ssl
+sudo cp bitwarden.crt ./data/ssl/
+sudo cp bitwarden.key ./data/ssl/

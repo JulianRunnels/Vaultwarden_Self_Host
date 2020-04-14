@@ -1,11 +1,14 @@
 version: '3'
+
 services:
   bitwarden:
     image: bitwardenrs/server:latest
     expose:
       - "80"
     volumes:
-      - ./bwdata/:/data/
+      - ./data/bitwarden:/data
+    restart: on-failure
+ 
   nginx:
     image: nginx:1.15-alpine
     ports:
@@ -14,3 +17,26 @@ services:
     volumes:
       - ./data/nginx:/etc/nginx
       - ./data/ssl:/etc/ssl
+
+  bw_backup:
+    image: bruceforce/bw_backup
+    container_name: bw_backup
+    restart: on-failure
+    depends_on:
+      - bitwarden
+    volumes:
+      - ./data/bitwarden:/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+        # uncomment this if you want your backup to be written to ./data/bitwarden folder"
+        # - ./data/bitwarden:/backup_folder/
+    environment:
+      - DB_FILE=/data/db.sqlite3
+        # uncomment this if you want your backup to be written to ./data/bitwarden folder"
+        # - BACKUP_FILE=/backup_folder/db_backup/backup.sqlite3
+      - BACKUP_FILE=/data/db_backup/backup.sqlite3
+      - CRON_TIME=0 5 * * *
+      - TIMESTAMP=false
+      - UID=0
+      - GID=0
+
