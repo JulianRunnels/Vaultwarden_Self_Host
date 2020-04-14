@@ -14,8 +14,8 @@ openssl req -new -key bitwarden.key -out bitwarden.csr
 echo ""
 echo -n "Please enter your FQDN: "
 read answer
-sed -i "s/bitwarden.local/$answer/g" bitwarden.ext
+sed -i "/DNS.1 = */c\DNS.1 = $answer" bitwarden.ext
+sed -i "/DNS.2 = */c\DNS.2 = www.$answer" bitwarden.ext
 openssl x509 -req -in bitwarden.csr -CA myCA.crt -CAkey myCA.key -CAcreateserial -out bitwarden.crt -days 365 -sha256 -extfile bitwarden.ext
-mkdir ./data/ssl
 sudo cp bitwarden.crt ./data/ssl/
 sudo cp bitwarden.key ./data/ssl/
