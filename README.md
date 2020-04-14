@@ -34,7 +34,7 @@ To do this:
 * Click the switch next to the certificate you installed to switch it to full trust
 
 Once you have the CA installed where you want it, spin up the containers:
-* `docker-compose up -d`
+* `sudo docker-compose up -d`
 
 You should now be able to access your instance at https://hostname
 
