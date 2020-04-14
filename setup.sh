@@ -4,7 +4,8 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
-apt install -y docker
+curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh
+sudo service docker enable
 usermod -aG docker $USER
 apt install -y libffi-dev libssl-dev
 apt install -y python3 python3-pip
