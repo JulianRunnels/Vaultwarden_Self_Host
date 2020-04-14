@@ -7,6 +7,8 @@ This project is aimed at creating a private Bitwarden instance on your local LAN
 __PLEASE NOTE THAT THIS SETUP USES [BITWARDEN_RS](https://github.com/dani-garcia/bitwarden_rs) WHICH IS AN UNOFFICAL COMMUNITY CREATED BACKEND. IT IS REGULARLY UPDATED AND HAS SEVERAL ADVANTAGES INCLUDING ABILITY TO RUN ON RASPBERRY PI, A MUCH LOWER OVERALL RESOURCE FOOTPRINT, AND FULLY BITWARDEN FUNCTIONALITY__
 
 ## To install ##
+__Note: to install on a Raspberry Pi, you will need up update the tags for the containers in docker-compose.yml with the values in the comments of that page__
+
 1. `git clone https://github.com/JulianRunnels/Bitwarden_Self_Host.git`
 2. `cd Bitbucket_Self_host`
 3. `chmod +x ./setup.sh`
