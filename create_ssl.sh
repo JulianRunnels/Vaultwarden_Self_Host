@@ -1,5 +1,5 @@
-#!/usr/bin/env bash
-echo "Creating key for personal CA"
+#!/bin/bash
+echo "Creating key for personal CA, please fill out the FQDN with the name you want for your CA"
 echo ""
 openssl genrsa -out myCA.key 2048
 echo "Creating personal CA"
@@ -8,11 +8,11 @@ openssl req -x509 -new -nodes -sha256 -days 3650 -key myCA.key -out myCA.crt
 echo "Creating key for bitwarden certificate"
 echo ""
 openssl genpkey -algorithm RSA -out bitwarden.key -outform PEM -pkeyopt rsa_keygen_bits:2048
-echo "Creating request for Bitwarden certificate"
+echo "Creating request for Bitwarden certificate, please fill out the FQDN with the nmae that the instance will be located at"
 echo ""
 openssl req -new -key bitwarden.key -out bitwarden.csr
 echo ""
-echo -n "Please enter your FQDN: "
+echo -n "Please enter your FQDN for your bitwarden instance: "
 read answer
 sed -i "/DNS.1 = */c\DNS.1 = $answer" ./data/ssl/bitwarden.ext
 sed -i "/DNS.2 = */c\DNS.2 = www.$answer" ./data/ssl/bitwarden.ext
