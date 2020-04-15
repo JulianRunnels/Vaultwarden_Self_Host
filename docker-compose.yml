@@ -8,6 +8,8 @@ services:
     volumes:
       - ./data/bitwarden:/data
     restart: on-failure
+    environment:
+      WEBSOCKET_ENABLED: 'true'
  
   nginx:
     image: nginx:1.15-alpine
