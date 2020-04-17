@@ -1,6 +1,6 @@
 # Bitwarden Self Host
 
-For more details please read blog [here](https://medium.com/@julianrunnels/set-up-your-own-personal-password-vault-313d76374046?sk=6291489db0af5db1d082c57642087f2b)
+For more details please read blog [here](https://medium.com/@julianrunnels/set-up-your-own-personal-password-vault-313d76374046)
 
 This project is aimed at creating a private Bitwarden instance on your local LAN for devices on your personal network to be able to access. The docker-compose files contains 3 containers, the bitwarden unoffical rust backend, an nginx reverse proxy for HTTPS, and a backup container. To faciliate the connection with Bitwarden's iOS apps via HTTPS, we are going to create our own private CA, so we can create trusted certificates, since self-signed certs won't work with the native app.
 
