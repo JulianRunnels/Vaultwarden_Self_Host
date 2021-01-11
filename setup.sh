@@ -4,7 +4,8 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
-curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh
+chmod +x get-docker.sh
+./get-docker.sh
 sudo service docker enable
 usermod -aG docker $USER
 apt install -y libffi-dev libssl-dev
@@ -15,7 +16,7 @@ clear
 echo "Would you like to create your own personal CA and SSL certificate to enable HTTPS with bitwarden?"
 select yn in "Yes" "No"; do
     case $yn in
-	Yes ) ./create_ssl.sh && break;;
+	Yes ) sudo ./create_ssl.sh && break;;
 	No ) echo "Make sure to load your own SSL certs into ./data/ssl for the Nginx container to use" && break;;
     esac
 done
