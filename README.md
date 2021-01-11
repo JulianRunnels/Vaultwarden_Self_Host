@@ -17,7 +17,7 @@ From here here are three different installation paths, depending on your existin
 * No docker/docker-compose installed, want to create a full private CA and client certificate:
   * `sudo ./setup.sh` - This will install docker and docker-compose and has option to guide you through creating the needed CA and certs
 * Docker/docker-compose installed, want to create a full private CA and client certificate:
-  * `./create_ssl.sh` - This will just create the needed SSL certificates
+  * `sudo ./create_ssl.sh` - This will just create the needed SSL certificates
 * Don't want to install docker or create certs, just spin up containers:
   * `sudo docker-compose up -d` - This will just spin up the containers, you will need to supply your own cert in ./data/ssl
   

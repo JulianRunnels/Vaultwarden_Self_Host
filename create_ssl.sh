@@ -1,23 +1,34 @@
 #!/bin/bash
+
+clear
+echo "Creating directory structure for CA"
+mkdir -p data/ssl/certs
+mkdir -p data/ssl/csr
+mkdir -p data/ssl/private
+mkdir -p data/ssl/newcerts
+touch data/ssl/index.txt
+echo 1000 > data/ssl/serial
+clear
 echo "Creating key for personal CA, please fill out the FQDN with the name you want for your CA"
 echo ""
-openssl genrsa -out myCA.key 2048
+openssl genrsa -aes256 -out data/ssl/private/myCA.key 4096
+chmod 500 data/ssl/private/myCA.key
 echo "Creating personal CA"
 echo ""
-openssl req -x509 -new -nodes -sha256 -days 3650 -key myCA.key -out myCA.crt
+openssl req -config data/ssl/bitwarden.ext -x509 -new -sha256 -days 3650 -extensions v3_ca -key data/ssl/private/myCA.key -out data/ssl/certs/myCA.crt
+clear
 echo "Creating key for bitwarden certificate"
 echo ""
-openssl genpkey -algorithm RSA -out bitwarden.key -outform PEM -pkeyopt rsa_keygen_bits:2048
+openssl genrsa -out data/ssl/private/bitwarden.key 2048
 echo "Creating request for Bitwarden certificate, please fill out the FQDN with the nmae that the instance will be located at"
 echo ""
-openssl req -new -key bitwarden.key -out bitwarden.csr
+openssl req -config data/ssl/bitwarden.ext -key data/ssl/private/bitwarden.key -new -sha256 -out data/ssl/csr/bitwarden.csr
 echo ""
+clear
 echo -n "Please enter your FQDN for your bitwarden instance: "
 read answer
 sed -i "/DNS.1 = */c\DNS.1 = $answer" ./data/ssl/bitwarden.ext
 sed -i "/DNS.2 = */c\DNS.2 = www.$answer" ./data/ssl/bitwarden.ext
-openssl x509 -req -in bitwarden.csr -CA myCA.crt -CAkey myCA.key -CAcreateserial -out bitwarden.crt -days 365 -sha256 -extfile ./data/ssl/bitwarden.ext
-sudo cp bitwarden.crt ./data/ssl/
-sudo cp bitwarden.key ./data/ssl/
+openssl ca -config data/ssl/bitwarden.ext -extensions server_cert -days 375 -notext -md sha256 -in data/ssl/csr/bitwarden.csr -out data/ssl/certs/bitwarden.crt
 echo ""
 echo "Your personal CA has been created, please make sure to install myCA.crt as a trusted root CA in all devices you want to connect to this instance"

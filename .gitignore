@@ -3,3 +3,6 @@
 *.srl
 *.pem
 *.csr
+/data/bitwarden/*
+/data/ssl/index.txt
+/data/ssl/serial
