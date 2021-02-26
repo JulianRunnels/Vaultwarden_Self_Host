@@ -20,7 +20,7 @@ clear
 echo "Creating key for bitwarden certificate"
 echo ""
 openssl genrsa -out data/ssl/private/bitwarden.key 2048
-echo "Creating request for Bitwarden certificate, please fill out the FQDN with the nmae that the instance will be located at"
+echo "Creating request for Bitwarden certificate, please fill out the FQDN with the name that the instance will be located at"
 echo ""
 openssl req -config data/ssl/bitwarden.ext -key data/ssl/private/bitwarden.key -new -sha256 -out data/ssl/csr/bitwarden.csr
 echo ""
