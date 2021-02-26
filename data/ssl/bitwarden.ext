@@ -110,8 +110,8 @@ keyUsage = critical, nonRepudiation, digitalSignature, keyEncipherment
 extendedKeyUsage = clientAuth, emailProtection
 
 [ my_subject_alt_names ]
-DNS.1 = vault76.lan
-DNS.2 = www.vault76.lan
+DNS.1 = bitwarden.lan
+DNS.2 = www.bitwarden.lan
 
 [ server_cert ]
 # Extensions for server certificates (`man x509v3_config`).
