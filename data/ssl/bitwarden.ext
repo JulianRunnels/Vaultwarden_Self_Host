@@ -120,7 +120,7 @@ nsCertType = server
 nsComment = "OpenSSL Generated Server Certificate"
 subjectKeyIdentifier = hash
 authorityKeyIdentifier = keyid,issuer:always
-keyUsage = critical, digitalSignature, keyEncipherment
+keyUsage = critical, digitalSignature, keyEncipherment, dataEncipherment
 extendedKeyUsage = serverAuth
 subjectAltName = @my_subject_alt_names
 
