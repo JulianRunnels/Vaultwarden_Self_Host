@@ -4,6 +4,9 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
+mkdir -p /opt/Bitwarden-Backup
+echo "Backup folder has been created at /opt/Bitwarden-Backup"
+
 chmod +x get-docker.sh
 ./get-docker.sh
 sudo service docker enable
