@@ -17,6 +17,7 @@ services:
     ports:
       - "80:80"
       - "443:443"
+      - "3012:3012"
     volumes:
       - ./data/nginx:/etc/nginx
       - ./data/ssl:/etc/ssl
