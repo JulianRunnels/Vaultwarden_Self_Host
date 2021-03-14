@@ -5,6 +5,7 @@ services:
     image: bitwardenrs/server:latest #swap tag to raspberry to run on a raspberry pi
     expose:
       - "80"
+      - "3012"
     volumes:
       - ./data/bitwarden:/data
     restart: on-failure
@@ -17,7 +18,6 @@ services:
     ports:
       - "80:80"
       - "443:443"
-      - "3012:3012"
     volumes:
       - ./data/nginx:/etc/nginx
       - ./data/ssl:/etc/ssl
