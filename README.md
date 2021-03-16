@@ -13,7 +13,7 @@ __Note: to install on a Raspberry Pi, you will need up update the tags for the c
 2. `cd Bitwarden_Self_Host`
 3. `chmod +x ./setup.sh`
 
-From here here are three different installation paths, depending on your existing setup and needs
+From here there are three different installation paths, depending on your existing setup and needs
 * No docker/docker-compose installed, want to create a full private CA and client certificate:
   * `sudo ./setup.sh` - This will install docker and docker-compose and has option to guide you through creating the needed CA and certs
 * Docker/docker-compose installed, want to create a full private CA and client certificate:
