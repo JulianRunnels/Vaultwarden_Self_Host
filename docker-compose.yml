@@ -2,7 +2,8 @@ version: '3'
 
 services:
   bitwarden:
-    image: bitwardenrs/server:latest #swap tag to raspberry to run on a raspberry pi
+    image: vaultwarden/server:latest #swap tag to raspberry to run on a raspberry pi
+    container_name: vaultwarden
     expose:
       - "80"
       - "3012"
@@ -14,6 +15,7 @@ services:
  
   nginx:
     image: nginx:1.15-alpine
+    container_name: nginx
     restart: always
     ports:
       - "80:80"
