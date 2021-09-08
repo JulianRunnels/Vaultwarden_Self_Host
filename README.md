@@ -55,4 +55,9 @@ Once you have PiPVN, or any OpenVPN based solution set up you can enable a split
   * `push "block-outside-dns"`
 * Comment out `#push "redirect-gateway def1"`
 
-Obviously this does put a little bit of a barrier in the way of using Bitwarden, but it is a small tradeoff to have full and complete control over your passwords and other important data. Of course, its very easy to adapt this repo to create a full publicly accessible instance, simply by adding port forwarding in your router, or running it in the cloud. Personally, I would stay away from both of those options, as they defeat the whole purpose of setting up this instance to have a private vault. 
+Obviously this does put a little bit of a barrier in the way of using Bitwarden, but it is a small tradeoff to have full and complete control over your passwords and other important data. Of course, its very easy to adapt this repo to create a full publicly accessible instance, simply by adding port forwarding in your router, or running it in the cloud. Personally, I would stay away from both of those options, as they defeat the whole purpose of setting up this instance to have a private vault.
+
+## Backups
+
+A backup file will be created at `/opt/Bitwarden-Backup/backup.sqlite3` with root permissions.
+Personally I use [rclone](https://rclone.org/onedrive/) to sync a folder with OneDrive, then copy that backup into the OneDrive folder daily, but however you want to move that backup folder out works.
