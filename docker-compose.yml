@@ -38,6 +38,7 @@ services:
     environment:
       - DB_FILE=/data/db.sqlite3
       - BACKUP_FILE=/backup/backup.sqlite3
+      - BACKUP_FILE_PERMISSIONS=700
       - CRON_TIME=0 1 * * *
       - TIMESTAMP=false
       - UID=0
