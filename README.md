@@ -48,11 +48,8 @@ A good guide to setup PiVPN is here: https://www.smarthomeblog.net/raspberry-pi-
 Once you have PiPVN, or any OpenVPN based solution set up you can enable a split tunnel, so that only DNS traffic and local based traffic is sent back to you home network rather than routing everything through it:
 
 * `sudo vim /etc/openvpn/server.conf`
-* Comment out `#push "dhcp-option DNS 10.8.0.1`
 * Add the following lines
   * `push "route 192.168.1.0 255.255.255.0"` (Change the 192 value to your personal private ip range)
-  * `push "dhcp-option DNS 192.168.1.28"`
-  * `push "block-outside-dns"`
 * Comment out `#push "redirect-gateway def1"`
 
 Obviously this does put a little bit of a barrier in the way of using Bitwarden, but it is a small tradeoff to have full and complete control over your passwords and other important data. Of course, its very easy to adapt this repo to create a full publicly accessible instance, simply by adding port forwarding in your router, or running it in the cloud. Personally, I would stay away from both of those options, as they defeat the whole purpose of setting up this instance to have a private vault.
