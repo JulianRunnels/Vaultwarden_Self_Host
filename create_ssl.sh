@@ -7,16 +7,26 @@ mkdir -p data/ssl/csr
 mkdir -p data/ssl/private
 mkdir -p data/ssl/newcerts
 touch data/ssl/index.txt
-echo 1000 > data/ssl/serial
+echo "unique_subject = yes" > data/ssl/index.txt.attr
+
+if [[ ! -f data/ssl/serial ]]; then
+	echo Creating serial file
+	echo 1000 > data/ssl/serial
+fi
+
 clear
-echo "Creating key for personal CA, please fill out the FQDN with the name you want for your CA"
-echo ""
-openssl genrsa -aes256 -out data/ssl/private/myCA.key 4096
-chmod 500 data/ssl/private/myCA.key
-echo "Creating personal CA"
-echo ""
-openssl req -config data/ssl/bitwarden.ext -x509 -new -sha256 -days 3650 -extensions v3_ca -key data/ssl/private/myCA.key -out data/ssl/certs/myCA.crt
-clear
+
+if [[ ! -f "data/ssl/private/myCA.key" ]]; then
+	echo "Creating key for personal CA, please fill out the FQDN with the name you want for your CA"
+	echo ""
+	openssl genrsa -aes256 -out data/ssl/private/myCA.key 4096
+	chmod 500 data/ssl/private/myCA.key
+	echo "Creating personal CA"
+	echo ""
+	openssl req -config data/ssl/bitwarden.ext -x509 -new -sha256 -days 3650 -extensions v3_ca -key data/ssl/private/myCA.key -out data/ssl/certs/myCA.crt
+	clear
+fi 
+	
 echo "Creating key for bitwarden certificate"
 echo ""
 openssl genrsa -out data/ssl/private/bitwarden.key 2048
