@@ -29,6 +29,6 @@ echo -n "Please enter your FQDN for your bitwarden instance: "
 read answer
 sed -i "/DNS.1 = */c\DNS.1 = $answer" ./data/ssl/bitwarden.ext
 sed -i "/DNS.2 = */c\DNS.2 = www.$answer" ./data/ssl/bitwarden.ext
-openssl ca -config data/ssl/bitwarden.ext -extensions server_cert -days 375 -notext -md sha256 -in data/ssl/csr/bitwarden.csr -out data/ssl/certs/bitwarden.crt
+openssl ca -config data/ssl/bitwarden.ext -extensions server_cert -days 3650 -notext -md sha256 -in data/ssl/csr/bitwarden.csr -out data/ssl/certs/bitwarden.crt
 echo ""
 echo "Your personal CA has been created, please make sure to install myCA.crt as a trusted root CA in all devices you want to connect to this instance"
