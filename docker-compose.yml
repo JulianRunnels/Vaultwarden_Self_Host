@@ -25,8 +25,8 @@ services:
       - ./data/ssl:/etc/ssl
 
   bw_backup:
-    image: bruceforce/bw_backup:latest #swap tag to rpi3 to run on a raspberry pi
-    container_name: bw_backup
+    image: bruceforce/vaultwarden-backup:latest #swap tag to rpi3 to run on a raspberry pi
+    container_name: vaultwarden-backup
     restart: on-failure
     depends_on:
       - bitwarden
