@@ -4,7 +4,7 @@ For more details please read blog [here](https://medium.com/@julianrunnels/set-u
 
 This project is aimed at creating a private Bitwarden instance on your local LAN for devices on your personal network to be able to access. The docker-compose files contains 3 containers, the bitwarden unoffical rust backend, an nginx reverse proxy for HTTPS, and a backup container. To faciliate the connection with Bitwarden's iOS apps via HTTPS, we are going to create our own private CA, so we can create trusted certificates, since self-signed certs won't work with the native app.
 
-__PLEASE NOTE THAT THIS SETUP USES [BITWARDEN_RS](https://github.com/dani-garcia/bitwarden_rs) WHICH IS AN UNOFFICAL COMMUNITY CREATED BACKEND. IT IS REGULARLY UPDATED AND HAS SEVERAL ADVANTAGES INCLUDING ABILITY TO RUN ON RASPBERRY PI, A MUCH LOWER OVERALL RESOURCE FOOTPRINT, AND FULL BITWARDEN FUNCTIONALITY, INCLUDING PREMIUM FEATURES__
+__PLEASE NOTE THAT THIS SETUP USES [Vaultwarden](https://github.com/dani-garcia/vaultwarden) WHICH IS AN UNOFFICAL COMMUNITY CREATED BACKEND. IT IS REGULARLY UPDATED AND HAS SEVERAL ADVANTAGES INCLUDING ABILITY TO RUN ON RASPBERRY PI, A MUCH LOWER OVERALL RESOURCE FOOTPRINT, AND FULL BITWARDEN FUNCTIONALITY, INCLUDING PREMIUM FEATURES__
 
 ## To install ##
 __Note: to install on a Raspberry Pi, you will need up update the tags for the containers in docker-compose.yml with the values in the comments of that page__
