@@ -1,16 +1,20 @@
-# Bitwarden Self Host
+# Vaultwarden Self Host
+
+📢 Note: This project was known as Bitwarden_Self_Host and has been renamed to separate itself from the official Bitwarden server in the hopes of avoiding confusion and trademark/branding issues. Please see [#23](https://github.com/JulianRunnels/Vaultwarden_Self_Host/discussions/23#discussion-4464560) for more explanation.
+
+***
 
 For more details please read blog [here](https://medium.com/@julianrunnels/set-up-your-own-personal-password-vault-313d76374046)
 
-This project is aimed at creating a private Bitwarden instance on your local LAN for devices on your personal network to be able to access. The docker-compose files contains 3 containers, the bitwarden unoffical rust backend, an nginx reverse proxy for HTTPS, and a backup container. To faciliate the connection with Bitwarden's iOS apps via HTTPS, we are going to create our own private CA, so we can create trusted certificates, since self-signed certs won't work with the native app.
+This project is aimed at creating a private Vaultwarden instance on your local LAN for devices on your personal network to be able to access. The docker-compose files contains 3 containers, the bitwarden unoffical rust backend, an nginx reverse proxy for HTTPS, and a backup container. To faciliate the connection with Bitwarden's iOS apps via HTTPS, we are going to create our own private CA, so we can create trusted certificates, since self-signed certs won't work with the native app.
 
 __PLEASE NOTE THAT THIS SETUP USES [Vaultwarden](https://github.com/dani-garcia/vaultwarden) WHICH IS AN UNOFFICAL COMMUNITY CREATED BACKEND. IT IS REGULARLY UPDATED AND HAS SEVERAL ADVANTAGES INCLUDING ABILITY TO RUN ON RASPBERRY PI, A MUCH LOWER OVERALL RESOURCE FOOTPRINT, AND FULL BITWARDEN FUNCTIONALITY, INCLUDING PREMIUM FEATURES__
 
 ## To install ##
 __Note: to install on a Raspberry Pi, you will need up update the tags for the containers in docker-compose.yml with the values in the comments of that page__
 
-1. `git clone https://github.com/JulianRunnels/Bitwarden_Self_Host.git`
-2. `cd Bitwarden_Self_Host`
+1. `git clone https://github.com/JulianRunnels/Vaultwarden_Self_Host.git`
+2. `cd Vaultwarden_Self_Host`
 3. `chmod +x ./setup.sh`
 
 From here there are three different installation paths, depending on your existing setup and needs
