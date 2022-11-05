@@ -33,9 +33,9 @@ To download, I recommend just using scp or any other file transfer:
 ### To revoke and recreate SSL certificates when expired ###
 
 1. Identify the serial number of the cert in use. Can view the cert in web server or just look and see what file exists in /data/ssl/newcerts (default is 1000)
-2. `revoke_cert.sh 1000`
-3. `create_cert.sh` will walk through the process or creating new certificates using the existing root CA. You will not need to ass a new root CA to devices
-4. Restart `sudo docker-compose down && sudo docker-compose up -d --build`
+2. `renew_cert.sh 1000` will automatically revoke and replace the existin bitwarden.crt certificate using the existing root CA. You will not need to add a new root CA to devices.
+ - Each time the certificate is renewed, the serial number will increase by 1, so the 2nd time the command `renew_cert.sh 1001` will need to be run instead. 
+3. Restart `sudo docker-compose down && sudo docker-compose up -d --build`
 
 #### Note for iOS installation ####
 After you transfer the cert over to iOS, to have it work with native Bitwarden app, you will need to  _enable full trust_.
